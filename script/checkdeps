@@ -1,0 +1,147 @@
+#!/usr/bin/perl
+
+use Module::CheckDeps qw(checkdeps);
+
+use Getopt::Long;
+
+use warnings;
+use strict;
+
+=head1 NAME
+
+checkdeps - Check for code dependencies
+
+=head1 VERSION
+
+Version 0.01
+
+=cut
+
+our $VERSION = '0.01';
+
+
+=head1 SYNOPSIS
+
+  checkdeps [OPTIONS]
+
+  Options:
+    --file   - set the input file
+    --format - set output format
+
+=cut
+
+my $format = "multiline";
+my $file;
+
+my $getopt  = Getopt::Long::GetOptions(
+	'format=s'  => \$format,
+	'file=s'    => \$file
+);
+
+
+
+open SCRIPT, $file or die "$!\n";
+my $code = join "", <SCRIPT>;
+close SCRIPT;
+
+my $missing = checkdeps($code);
+
+foreach my $module(@$missing) {
+
+	if ($format eq 'oneline') {
+
+		print "$module ";
+
+	} elsif ($format eq 'multiline') {
+
+		print "$module\n";
+
+	}
+}
+
+print "\n" if $format eq 'oneline';
+
+=head1 OPTIONS
+
+=over 4
+
+=item B<--format> FORMAT
+
+Specifies the format of the output.
+Must be:
+
+=over 8
+
+=item B<oneline>
+
+Print every module in the same line (default).
+
+=item B<multiline>
+
+Print every module on a different line.
+
+=back
+
+=back
+
+=head1 AUTHOR
+
+Alessandro Ghedini, C<< <alexbio at cpan.org> >>
+
+=head1 BUGS
+
+Please report any bugs or feature requests to C<bug-module::checkdeps at rt.cpan.org>, or through
+the web interface at L<http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Module::CheckDeps>.  I will be notified, and then you'll
+automatically be notified of progress on your bug as I make changes.
+
+=head1 SUPPORT
+
+You can find documentation for this module with the perldoc command.
+
+    perldoc checkdeps
+
+You can also look for information at:
+
+=over 4
+
+=item * Homepage homepage
+
+L<http://alexlog.co.cc/projects/module-checkdeps>
+
+=item * Git repository
+
+L<http://github.com/AlexBio/Module-CheckDeps>
+
+=item * RT: CPAN's request tracker
+
+L<http://rt.cpan.org/NoAuth/Bugs.html?Dist=Module::CheckDeps>
+
+=item * AnnoCPAN: Annotated CPAN documentation
+
+L<http://annocpan.org/dist/Module::CheckDeps>
+
+=item * CPAN Ratings
+
+L<http://cpanratings.perl.org/d/Module::CheckDeps>
+
+=item * Search CPAN
+
+L<http://search.cpan.org/dist/Module::CheckDeps/>
+
+=back
+
+=head1 SEE ALSO
+
+L<scandeps.pl>
+
+=head1 LICENSE AND COPYRIGHT
+
+Copyright 2010 Alessandro Ghedini.
+
+This program is free software; you can redistribute it and/or modify it
+under the terms of either: the GNU General Public License as published
+by the Free Software Foundation; or the Artistic License.
+
+See http://dev.perl.org/licenses/ for more information.
+
+=cut
