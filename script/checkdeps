@@ -13,11 +13,11 @@ checkdeps - Check for code dependencies
 
 =head1 VERSION
 
-Version 0.01
+Version 0.02
 
 =cut
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 
 =head1 SYNOPSIS
@@ -26,7 +26,7 @@ our $VERSION = '0.01';
 
   Options:
     --file   - set the input file
-    --format - set output format
+    --format - set output format (optional)
 
 =cut
 
@@ -38,7 +38,7 @@ my $getopt  = Getopt::Long::GetOptions(
 	'file=s'    => \$file
 );
 
-
+die "Specify a file to parse with '--file'.\n" if !$file;
 
 open SCRIPT, $file or die "$!\n";
 my $code = join "", <SCRIPT>;
@@ -74,11 +74,11 @@ Must be:
 
 =item B<oneline>
 
-Print every module in the same line (default).
+Print every module in the same line.
 
 =item B<multiline>
 
-Print every module on a different line.
+Print every module on a different line (default).
 
 =back
 
