@@ -1,4 +1,7 @@
 package Module::CheckDeps;
+BEGIN {
+  $Module::CheckDeps::VERSION = '0.03';
+}
 
 use base Exporter; 
 use Module::ExtractUse;
@@ -14,12 +17,7 @@ Module::CheckDeps - Very simple dependencies checker for Perl code
 
 =head1 VERSION
 
-Version 0.02
-
-=cut
-
-our $VERSION = '0.02';
-
+version 0.03
 
 =head1 SYNOPSIS
 

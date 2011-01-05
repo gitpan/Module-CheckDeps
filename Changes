@@ -1,5 +1,41 @@
-Revision history for Module-CheckDeps
+==============================
+9999-99-99 99:99:99 +0000 HEAD
+==============================
 
-0.01    Date/time
-        First version, released on an unsuspecting world.
+  commit 7f9d15690a2cb750d1af53cff3c849dbe05f600b
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date:   Wed Jan 5 15:35:50 2011 +0100
+  
+    bump version
 
+  commit 1a93ad56c177497ce200b887f02fade7e76ada63
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date:   Wed Jan 5 15:35:30 2011 +0100
+  
+    switch to Dist::Zilla 
+
+===============================
+2010-06-30 12:01:36 +0200 v0.02
+===============================
+
+  commit 70d9b5ff8f4407ac5c35f3cd6396f7dc5b052a60
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date:   Wed Jun 30 12:01:36 2010 +0200
+  
+    update version
+
+  commit 53ceff63094c7a01e2cc2625e5caec2e20c7e1af
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date:   Wed Jun 30 12:01:06 2010 +0200
+  
+    fix documentation error
+
+  commit a230f33f029594bd4292a5e63ad07adae095bf56
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date:   Wed Jun 30 12:00:25 2010 +0200
+  
+    add check on arguments 
+
+===================================
+End of changes in the last 365 days
+===================================
