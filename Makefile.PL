@@ -18,13 +18,16 @@ my %WriteMakefileArgs = (
     'ExtUtils::MakeMaker' => '6.31'
   },
   'DISTNAME' => 'Module-CheckDeps',
-  'EXE_FILES' => [],
+  'EXE_FILES' => [
+    'bin/checkdeps'
+  ],
   'LICENSE' => 'perl',
   'NAME' => 'Module::CheckDeps',
   'PREREQ_PM' => {
+    'Getopt::Long' => '0',
     'Module::ExtractUse' => '0'
   },
-  'VERSION' => '0.03',
+  'VERSION' => '0.04',
   'test' => {
     'TESTS' => 't/*.t'
   }

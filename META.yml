@@ -14,11 +14,12 @@ meta-spec:
   version: 1.4
 name: Module-CheckDeps
 requires:
+  Getopt::Long: 0
   Module::ExtractUse: 0
 resources:
   homepage: http://search.cpan.org/dist/Module-CheckDeps/
   repository: git://github.com/AlexBio/Module-CheckDeps.git
-version: 0.03
+version: 0.04
 x_Dist_Zilla:
   plugins:
     -
