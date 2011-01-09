@@ -19,7 +19,7 @@ requires:
 resources:
   homepage: http://search.cpan.org/dist/Module-CheckDeps/
   repository: git://github.com/AlexBio/Module-CheckDeps.git
-version: 0.04
+version: 0.05
 x_Dist_Zilla:
   plugins:
     -

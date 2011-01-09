@@ -2,6 +2,28 @@
 9999-99-99 99:99:99 +0000 HEAD
 ==============================
 
+  commit 961e8c5902f2742ff8d5e75670e55ab44ac97ad8
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date:   Sun Jan 9 12:54:58 2011 +0100
+  
+    bump version
+
+  commit 23a65ca5a4db3ec8c36ffb61e5e6b39ff310be8c
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date:   Sun Jan 9 12:54:28 2011 +0100
+  
+    fix-up test
+
+  commit 7c644aa56e0aa3baf1ae0d0e2ba1d9822bf35cf7
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date:   Sun Jan 9 12:51:36 2011 +0100
+  
+    make checkdeps executable 
+
+===============================
+2011-01-07 15:11:15 +0100 v0.04
+===============================
+
   commit 671566965920b0e8190472281365cd7fbefa268b
   Author: Alessandro Ghedini <al3xbio@gmail.com>
   Date:   Fri Jan 7 15:11:15 2011 +0100
