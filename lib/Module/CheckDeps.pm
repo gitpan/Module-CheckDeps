@@ -1,9 +1,9 @@
 package Module::CheckDeps;
 BEGIN {
-  $Module::CheckDeps::VERSION = '0.05';
+  $Module::CheckDeps::VERSION = '0.06';
 }
 
-use base Exporter; 
+use base Exporter;
 use Module::ExtractUse;
 
 use warnings;
@@ -17,7 +17,7 @@ Module::CheckDeps - Very simple dependencies checker for Perl code
 
 =head1 VERSION
 
-version 0.05
+version 0.06
 
 =head1 SYNOPSIS
 
@@ -47,7 +47,7 @@ Return an array reference containing packages that need to be installed
 
 sub checkdeps {
 	my $code = shift;
-	
+
 	my $p = Module::ExtractUse -> new;
 	$p -> extract_use(\$code);
 
@@ -67,48 +67,6 @@ sub checkdeps {
 =head1 AUTHOR
 
 Alessandro Ghedini, C<< <alexbio at cpan.org> >>
-
-=head1 BUGS
-
-Please report any bugs or feature requests to C<bug-module-checkdeps at rt.cpan.org>, or through
-the web interface at L<http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Module-CheckDeps>.  I will be notified, and then you'll
-automatically be notified of progress on your bug as I make changes.
-
-=head1 SUPPORT
-
-You can find documentation for this module with the perldoc command.
-
-    perldoc Module::CheckDeps
-
-You can also look for information at:
-
-=over 4
-
-=item * Homepage homepage
-
-L<http://alexlog.co.cc/projects/module-checkdeps>
-
-=item * Git repository
-
-L<http://github.com/AlexBio/Module-CheckDeps>
-
-=item * RT: CPAN's request tracker
-
-L<http://rt.cpan.org/NoAuth/Bugs.html?Dist=Module-CheckDeps>
-
-=item * AnnoCPAN: Annotated CPAN documentation
-
-L<http://annocpan.org/dist/Module-CheckDeps>
-
-=item * CPAN Ratings
-
-L<http://cpanratings.perl.org/d/Module-CheckDeps>
-
-=item * Search CPAN
-
-L<http://search.cpan.org/dist/Module-CheckDeps/>
-
-=back
 
 =head1 SEE ALSO
 

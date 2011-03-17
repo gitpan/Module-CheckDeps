@@ -13,27 +13,26 @@ checkdeps - Check for code dependencies
 
 =head1 VERSION
 
-version 0.05
+version 0.06
 
 =head1 SYNOPSIS
 
-  checkdeps [OPTIONS]
+  checkdeps [OPTIONS] file.pl
 
   Options:
-    --file   - set the input file
     --format - set output format (optional)
 
 =cut
 
 my $format = "multiline";
-my $file;
 
 my $getopt  = Getopt::Long::GetOptions(
-	'format=s'  => \$format,
-	'file=s'    => \$file
+	'format=s'  => \$format
 );
 
-die "Specify a file to parse with '--file'.\n" if !$file;
+my $file = $ARGV[0];
+
+die "Specify a valid file.\n" if !$file;
 
 open SCRIPT, $file or die "$!\n";
 my $code = join "", <SCRIPT>;
@@ -82,48 +81,6 @@ Print every module on a different line (default).
 =head1 AUTHOR
 
 Alessandro Ghedini, C<< <alexbio at cpan.org> >>
-
-=head1 BUGS
-
-Please report any bugs or feature requests to C<bug-module::checkdeps at rt.cpan.org>, or through
-the web interface at L<http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Module::CheckDeps>.  I will be notified, and then you'll
-automatically be notified of progress on your bug as I make changes.
-
-=head1 SUPPORT
-
-You can find documentation for this module with the perldoc command.
-
-    perldoc checkdeps
-
-You can also look for information at:
-
-=over 4
-
-=item * Homepage homepage
-
-L<http://alexlog.co.cc/projects/module-checkdeps>
-
-=item * Git repository
-
-L<http://github.com/AlexBio/Module-CheckDeps>
-
-=item * RT: CPAN's request tracker
-
-L<http://rt.cpan.org/NoAuth/Bugs.html?Dist=Module::CheckDeps>
-
-=item * AnnoCPAN: Annotated CPAN documentation
-
-L<http://annocpan.org/dist/Module::CheckDeps>
-
-=item * CPAN Ratings
-
-L<http://cpanratings.perl.org/d/Module::CheckDeps>
-
-=item * Search CPAN
-
-L<http://search.cpan.org/dist/Module::CheckDeps/>
-
-=back
 
 =head1 SEE ALSO
 

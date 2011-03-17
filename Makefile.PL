@@ -27,7 +27,7 @@ my %WriteMakefileArgs = (
     'Getopt::Long' => '0',
     'Module::ExtractUse' => '0'
   },
-  'VERSION' => '0.05',
+  'VERSION' => '0.06',
   'test' => {
     'TESTS' => 't/*.t'
   }

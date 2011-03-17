@@ -2,6 +2,34 @@
 9999-99-99 99:99:99 +0000 HEAD
 ==============================
 
+  commit 027b770d5f92ee78b7726f21d7a32b9cb99ef220
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date:   Thu Mar 17 16:42:18 2011 +0100
+  
+    bump version
+
+  commit 26bd0641f66cefc3673fa92b03cf4e1ac00dcd60
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date:   Thu Mar 17 16:41:17 2011 +0100
+  
+    drop --file option
+
+  commit c95b9febba8e7a35a61f1dc1adc08714e66c8464
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date:   Thu Mar 17 16:39:42 2011 +0100
+  
+    purge cruft from docs
+
+  commit 8341079e2444b0925f67dcf6cd20767d7279f13a
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date:   Thu Mar 17 16:38:45 2011 +0100
+  
+    use @GitHub plugin bundle 
+
+===============================
+2011-01-09 12:54:58 +0100 v0.05
+===============================
+
   commit 961e8c5902f2742ff8d5e75670e55ab44ac97ad8
   Author: Alessandro Ghedini <al3xbio@gmail.com>
   Date:   Sun Jan 9 12:54:58 2011 +0100
