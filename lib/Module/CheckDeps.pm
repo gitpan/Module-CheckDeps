@@ -1,10 +1,10 @@
 package Module::CheckDeps;
 BEGIN {
-  $Module::CheckDeps::VERSION = '0.06';
+  $Module::CheckDeps::VERSION = '0.07';
 }
 
+use PPI;
 use base Exporter;
-use Module::ExtractUse;
 
 use warnings;
 use strict;
@@ -17,7 +17,7 @@ Module::CheckDeps - Very simple dependencies checker for Perl code
 
 =head1 VERSION
 
-version 0.06
+version 0.07
 
 =head1 SYNOPSIS
 
@@ -48,13 +48,16 @@ Return an array reference containing packages that need to be installed
 sub checkdeps {
 	my $code = shift;
 
-	my $p = Module::ExtractUse -> new;
-	$p -> extract_use(\$code);
+	my $doc = PPI::Document -> new(\$code);
+	my $includes = $doc -> find(sub {
+		$_[1] -> isa('PPI::Statement::Include')  and
+		($_[1] -> type eq 'use' or $_[1] -> type eq 'require')
+	});
 
-	my @used = $p -> array;
+	my @modules = map {$_ -> module} @$includes;
 
 	my @missing;
-	foreach my $module(@used) {
+	foreach my $module(@modules) {
 		eval "use $module";
 		next if !$@;
 
@@ -66,7 +69,7 @@ sub checkdeps {
 
 =head1 AUTHOR
 
-Alessandro Ghedini, C<< <alexbio at cpan.org> >>
+Alessandro Ghedini <alexbio@cpan.org>
 
 =head1 SEE ALSO
 

@@ -5,8 +5,12 @@ use Module::CheckDeps qw(checkdeps);
 use strict;
 
 my $code = <<CODE;
+ use Test::More; # assume this is installed
+
  use Some::Module;
  use Another::Module;
+
+ print "nothing special to say";
 CODE
 
 my @expected = ('Some::Module', 'Another::Module');

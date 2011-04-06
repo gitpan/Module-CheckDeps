@@ -25,9 +25,9 @@ my %WriteMakefileArgs = (
   'NAME' => 'Module::CheckDeps',
   'PREREQ_PM' => {
     'Getopt::Long' => '0',
-    'Module::ExtractUse' => '0'
+    'PPI' => '0'
   },
-  'VERSION' => '0.06',
+  'VERSION' => '0.07',
   'test' => {
     'TESTS' => 't/*.t'
   }

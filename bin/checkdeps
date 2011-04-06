@@ -13,7 +13,7 @@ checkdeps - Check for code dependencies
 
 =head1 VERSION
 
-version 0.06
+version 0.07
 
 =head1 SYNOPSIS
 
@@ -80,7 +80,7 @@ Print every module on a different line (default).
 
 =head1 AUTHOR
 
-Alessandro Ghedini, C<< <alexbio at cpan.org> >>
+Alessandro Ghedini <alexbio@cpan.org>
 
 =head1 SEE ALSO
 

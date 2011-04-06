@@ -2,6 +2,34 @@
 9999-99-99 99:99:99 +0000 HEAD
 ==============================
 
+  commit d3dee663eaf7e146969fea2723e8a2aa1cf43f1e
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date:   Wed Apr 6 23:53:46 2011 +0200
+  
+    bump version
+
+  commit 0b958ce3724f65451acd9b8a22c9d69dbf59e94b
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date:   Wed Apr 6 23:53:28 2011 +0200
+  
+    improve the tests a bit
+
+  commit e9f5e2093e3277aa7545297ee1fdd3b5e3fcf377
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date:   Wed Apr 6 23:46:38 2011 +0200
+  
+    use PPI to extract used modules
+
+  commit 984f997e26ede5f08ad49ddfbc7b0a0bdeba8839
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date:   Thu Mar 17 19:45:58 2011 +0100
+  
+    fix email address 
+
+===============================
+2011-03-17 16:42:18 +0100 v0.06
+===============================
+
   commit 027b770d5f92ee78b7726f21d7a32b9cb99ef220
   Author: Alessandro Ghedini <al3xbio@gmail.com>
   Date:   Thu Mar 17 16:42:18 2011 +0100
