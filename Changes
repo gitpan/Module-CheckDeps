@@ -2,6 +2,34 @@
 9999-99-99 99:99:99 +0000 HEAD
 ==============================
 
+  commit bbc5fe896b8827a2a1ea2554f1890fed65de2785
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date:   Thu Apr 7 19:50:38 2011 +0200
+  
+    bump version
+
+  commit e5b028f6d2765c7c6ff33e8db934f53588337378
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date:   Thu Apr 7 19:49:58 2011 +0200
+  
+    improve docs
+
+  commit e2e003f6be8017627765c66e99f19ec44a185f9d
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date:   Thu Apr 7 19:44:15 2011 +0200
+  
+    add '--all' option
+
+  commit a641bbcd083550b8a791d2cb8a9bb08a0e04650c
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date:   Thu Apr 7 19:39:06 2011 +0200
+  
+    add 'alldeps' sub 
+
+===============================
+2011-04-06 23:53:46 +0200 v0.07
+===============================
+
   commit d3dee663eaf7e146969fea2723e8a2aa1cf43f1e
   Author: Alessandro Ghedini <al3xbio@gmail.com>
   Date:   Wed Apr 6 23:53:46 2011 +0200

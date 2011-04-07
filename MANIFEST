@@ -9,6 +9,7 @@ bin/checkdeps
 dist.ini
 lib/Module/CheckDeps.pm
 t/00-load.t
+t/01-all.t
 t/01-check.t
 t/boilerplate.t
 t/manifest.t

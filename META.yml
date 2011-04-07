@@ -20,7 +20,7 @@ resources:
   bugtracker: https://github.com/AlexBio/Module-CheckDeps/issues
   homepage: http://search.cpan.org/dist/Module-CheckDeps/
   repository: git://github.com/AlexBio/Module-CheckDeps.git
-version: 0.07
+version: 0.08
 x_Dist_Zilla:
   plugins:
     -

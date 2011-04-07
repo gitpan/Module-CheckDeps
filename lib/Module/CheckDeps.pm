@@ -1,6 +1,6 @@
 package Module::CheckDeps;
 BEGIN {
-  $Module::CheckDeps::VERSION = '0.07';
+  $Module::CheckDeps::VERSION = '0.08';
 }
 
 use PPI;
@@ -9,7 +9,7 @@ use base Exporter;
 use warnings;
 use strict;
 
-our @EXPORT_OK = qw(checkdeps);
+our @EXPORT_OK = qw(alldeps checkdeps);
 
 =head1 NAME
 
@@ -17,35 +17,37 @@ Module::CheckDeps - Very simple dependencies checker for Perl code
 
 =head1 VERSION
 
-version 0.07
+version 0.08
 
 =head1 SYNOPSIS
 
-Module::CheckDeps parses Perl code, and returns which used modules are
-not yet installed.
+    use Module::CheckDeps qw(alldeps checkdeps);
 
-In comparison to similar modules, such as Module::ScanDeps,
-Module::CheckDeps is much more basic and simpler, but also faster.
-
-    use Module::CheckDeps qw(checkdeps);
-
+    my $all     = alldeps( $code );
     my $missing = checkdeps( $code );
+
+=head1 DESCRIPTION
+
+B<Module::CheckDeps> parses Perl code searching for used modules. It can either
+return a list of all the modules used by some code, or a list of the used
+modules that are not available in the host system (e.g. not installed modules).
+
+Compared to similar modules, such as L<Module::ScanDeps>, B<Module::CheckDeps>
+is simpler and less powerful, but also much faster.
 
 =head1 EXPORT
 
-checkdeps will be exported if explicitly specified.
-
-    use Module::CheckDeps qw(checkdeps);
+C<checkdeps> and C<alldeps> will be exported if explicitly specified.
 
 =head1 SUBROUTINES
 
-=head2 checkdeps( $code )
+=head2 alldeps( $code )
 
-Return an array reference containing packages that need to be installed
+Return an array reference containing all the used packages
 
 =cut
 
-sub checkdeps {
+sub alldeps {
 	my $code = shift;
 
 	my $doc = PPI::Document -> new(\$code);
@@ -56,8 +58,22 @@ sub checkdeps {
 
 	my @modules = map {$_ -> module} @$includes;
 
+	return \@modules;
+}
+
+=head2 checkdeps( $code )
+
+Return an array reference containing packages that need to be installed
+
+=cut
+
+sub checkdeps {
+	my $code = shift;
+
+	my $modules = alldeps($code);
+
 	my @missing;
-	foreach my $module(@modules) {
+	foreach my $module(@$modules) {
 		eval "use $module";
 		next if !$@;
 

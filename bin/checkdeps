@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-use Module::CheckDeps qw(checkdeps);
+use Module::CheckDeps qw(alldeps checkdeps);
 
 use Getopt::Long;
 
@@ -13,20 +13,22 @@ checkdeps - Check for code dependencies
 
 =head1 VERSION
 
-version 0.07
+version 0.08
 
 =head1 SYNOPSIS
 
   checkdeps [OPTIONS] file.pl
 
   Options:
+    --all    - show every dependencies (even if installed)
     --format - set output format (optional)
 
 =cut
 
-my $format = "multiline";
+my ($format, $all) = "multiline";
 
 my $getopt  = Getopt::Long::GetOptions(
+	'all'       => \$all,
 	'format=s'  => \$format
 );
 
@@ -38,7 +40,7 @@ open SCRIPT, $file or die "$!\n";
 my $code = join "", <SCRIPT>;
 close SCRIPT;
 
-my $missing = checkdeps($code);
+my $missing = defined $all ? alldeps($code) : checkdeps($code);
 
 foreach my $module(@$missing) {
 
@@ -59,7 +61,11 @@ print "\n" if $format eq 'oneline';
 
 =over 4
 
-=item B<--format> FORMAT
+=item B<--all>, B<-a>
+
+Make C<checkdeps> list every dependencies of the code, even if already installed.
+
+=item B<--format>, B<-f> FORMAT
 
 Specifies the format of the output.
 Must be:

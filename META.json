@@ -43,7 +43,7 @@
          "web" : "https://github.com/AlexBio/Module-CheckDeps"
       }
    },
-   "version" : "0.07",
+   "version" : "0.08",
    "x_Dist_Zilla" : {
       "plugins" : [
          {

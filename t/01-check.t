@@ -5,6 +5,7 @@ use Module::CheckDeps qw(checkdeps);
 use strict;
 
 my $code = <<CODE;
+ use PPI;
  use Test::More; # assume this is installed
 
  use Some::Module;
@@ -15,5 +16,4 @@ CODE
 
 my @expected = ('Some::Module', 'Another::Module');
 
-is_deeply(checkdeps($code), \@expected, "Check");
-
+is_deeply(checkdeps($code), \@expected, "Testing 'checkdeps()'");
